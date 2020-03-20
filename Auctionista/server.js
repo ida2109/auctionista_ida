@@ -42,6 +42,18 @@ app.get("/data/:table", async (req, res) => {
   res.json(result)
 })
 
+app.get("/data/6_latest_bid/:id", async (req, res) => {
+  let query = "SELECT * FROM 6_latest_bid WHERE bid_item = ?"
+  let result = await db.query(query, [req.params.id])
+  res.json(result)
+})
+
+app.get("/data/6_latest_bid/:id", async (req, res) => {
+  let query = "SELECT * FROM 6_latest_bid WHERE bid_item = ?"
+  let result = await db.query(query, [req.params.id])
+  res.json(result)
+})
+
 app.post("/data/users", async (req, res) => {
   console.log("req.body", req.body)
   let query = "INSERT INTO users SET user_name = ?, user_email = ?"
